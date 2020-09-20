@@ -56,12 +56,14 @@ class App extends React.Component {
   setUpdate(task,key,bucket){
     console.log("items:"+this.state.items);
     const items = this.state.items;
-    items.map(item=>{      
+     items.map(item=>{      
       if(item.key===key){
         console.log(item.key +"    "+key)
         item.task= task;
        item.bucket=bucket;
+       return true;
       }
+      else return false;
     })
     this.setState({
       items: items
